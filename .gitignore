@@ -34,3 +34,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/ProjectSettings/
+/Logs/
+/.idea/
+/Assets/Plugins/
+/Assets/Plugins.meta

@@ -16,13 +16,13 @@ public class RotationSystem : ComponentSystem
 
     protected override void OnUpdate()
     {
-        ForEach((ref RotationSpeed rotationSpeed, ref Rotation rotation) =>
+        Entities.With(_cubes).ForEach((ref RotationSpeed rotationSpeed, ref Rotation rotation) =>
         {
             rotation.Value = math.mul(rotation.Value,
                 quaternion.RotateY(
                     math.radians(rotationSpeed.DegreesPerSecond * Time.deltaTime)
                 )
             );
-        }, _cubes);
+        });
     }
 }
