@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class RotationSystem : ComponentSystem
 {
-    private ComponentGroup _cubes;
+    private EntityQuery _cubes;
 
     protected override void OnCreateManager()
     {
         _cubes = Entities
             .WithAll<RotationSpeed, Rotation>()
-            .ToComponentGroup();
+            .ToEntityQuery();
     }
 
     protected override void OnUpdate()
